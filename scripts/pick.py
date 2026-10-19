@@ -53,7 +53,7 @@ def hosted_mb():
     for d in os.listdir("."):
         if re.match(r"v\d", d) and os.path.isdir(d):
             sizes.append(sum(os.path.getsize(os.path.join(a, f)) for a, _, fs in os.walk(d) for f in fs) / 1048576)
-    return sum(sizes) / len(sizes) if sizes else 40.0
+    return sum(sizes) / len(sizes) if sizes else float(os.environ.get("EST_MB", "40"))
 
 # How many versions fit under the size cap. Thinning only starts when the whole history would not fit.
 BUDGET = int(os.environ.get("BUDGET", 0)) or max(5, int(float(os.environ.get("CAP_MB", "800")) * 0.9 / max(hosted_mb(), 1)))
