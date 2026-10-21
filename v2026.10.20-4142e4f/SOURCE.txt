@@ -1,0 +1,3 @@
+Built from ecto/vcad at commit 4142e4f (packages/app).
+https://github.com/ecto/vcad/tree/4142e4f/packages/app
+Built with the project's own vite build (the prebuilt WebAssembly kernel committed upstream is used as is). Sign-in, cloud sync and AI features are not configured in this copy.
